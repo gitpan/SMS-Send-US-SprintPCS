@@ -71,7 +71,7 @@ require WWW::Mechanize;
 use autouse 'Carp' => 'croak';
 
 use vars qw{$VERSION};
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 # Starting URI
 my $FORM = 'http://messaging.sprintpcs.com/textmessaging/compose';

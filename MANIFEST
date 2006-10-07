@@ -1,11 +1,9 @@
-.cvsignore
 Changes
 lib/SMS/Send/US/SprintPCS.pm
 Makefile.PL
 MANIFEST
 META.yml			# Will be created by "make dist"
 README
-SIGNATURE
 t/00-load.t
 t/10compile.t
 t/20basic.t
