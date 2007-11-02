@@ -64,14 +64,16 @@ Using this driver will cost you money. B<YOU HAVE BEEN WARNED>
 
 =cut
 
-use 5.005;
 use strict;
-use base 'SMS::Send::Driver';
-require WWW::Mechanize;
-use autouse 'Carp' => 'croak';
+use vars qw( @ISA $VERSION );
 
-use vars qw{$VERSION};
-$VERSION = '0.02';
+BEGIN {
+    @ISA     = 'SMS::Send::Driver';
+    $VERSION = '0.03';
+}
+use SMS::Send;
+use WWW::Mechanize;
+use Carp qw( croak );
 
 # Starting URI
 my $FORM = 'http://messaging.sprintpcs.com/textmessaging/compose';
@@ -148,7 +150,7 @@ sub _get_form {
 
     # Get to the Web2TXT form
     $self->{mech}->get($FORM);
-    if ( not $self->{mech}->content =~ /Compose a Message/ ) {
+    if ( not $self->{mech}->content =~ /Compose a Text Message/ ) {
         croak 'Could not locate the SMS send form';
     }
     $self->{mech}->form_name('composeForm');

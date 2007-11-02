@@ -8,6 +8,5 @@ t/00-load.t
 t/10compile.t
 t/20basic.t
 t/30live.t
-t/boilerplate.t
-t/pod-coverage.t
-t/pod.t
+xt/pod-coverage.t
+xt/pod.t
